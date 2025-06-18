@@ -1,0 +1,360 @@
+/* Buniyadi Reset aur Font */
+body {
+    font-family: Arial, sans-serif; /* Poore page ka default font */
+    margin: 0; /* Body ke around default margin hatayen */
+    padding: 0; /* Body ke around default padding hatayen */
+    box-sizing: border-box; /* Box model ko set karta hai */
+    line-height: 1.6; /* Line height adjust karta hai readability ke liye */
+    color: #333; /* Default text color */
+}
+
+/* Container class ko style karein */
+.container {
+    width: 80%; /* Container ki चौड़ाई (width) */
+    margin: auto; /* Container ko center mein karega */
+    overflow: hidden; /* Clear floats */
+}
+
+/* Header Section */
+header {
+    background: #0056b3; /* Header ka background color */
+    color: #fff; /* Header ke text ka color */
+    padding: 1rem 20px; /* Top aur bottom padding, with side padding for logos */
+    display: flex; /* Flexbox use karein elements ko side-by-side rakhne ke liye */
+    align-items: center; /* Vertically center align items */
+    justify-content: space-between; /* Items ke beech mein space dalen */
+    position: relative; /* Agar absolute positioning use karni ho baad mein */
+}
+
+.logo-container {
+    /* Logo container ke liye koi khaas styling nahi */
+    flex-shrink: 0; /* Logos ko shrink hone se rokein */
+}
+
+.logo-container img {
+    height: 150px; /* Logos ki height set karein */
+    width: auto; /* Width auto rakhein taaki aspect ratio maintain rahe */
+    vertical-align: middle; /* Inline-block images ke liye vertical alignment */
+}
+
+.header-text {
+    flex-grow: 1; /* Center text ko available space lene dein */
+    text-align: center; /* Text ko center mein karein */
+    margin: 0 10px; /* Logos aur text ke beech thoda space */
+}
+
+header h1 {
+    margin: 0; /* Heading ka default margin hatayen */
+    font-size: 2.5rem; /* Heading ka font size */
+}
+
+header p {
+    font-size: 1.2rem; /* Paragraph ka font size */
+    margin-top: 0.5rem;
+}
+
+/* Navigation Bar */
+nav {
+    background: #004085; /* Navigation bar ka background color */
+    color: #fff; /* Navigation text color */
+    padding: 0.8rem 0;
+    text-align: center;
+}
+
+nav ul {
+    padding: 0; /* List ka default padding hatayen */
+    list-style: none; /* List item bullets hatayen */
+    margin: 0; /* List ka default margin hatayen */
+}
+
+nav ul li {
+    display: inline; /* List items ko side-by-side dikhayen */
+    padding: 0 15px; /* Links ke beech mein padding */
+}
+
+nav ul li a {
+    color: #fff; /* Link ka color */
+    text-decoration: none; /* Link ke niche ki line (underline) hatayen */
+    font-weight: bold; /* Font ko bold karein */
+    transition: color 0.3s ease; /* Color change par smooth effect */
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Jab mouse link par jaye (hover) toh color change karein */
+}
+
+/* Hero Section */
+#hero {
+    background: url('https://via.placeholder.com/1500x500?text=CPAG+Campus+View') no-repeat center center/cover; /* Background image */
+    color: #fff;
+    min-height: 400px; /* Minimum height */
+    display: flex; /* Flexbox use karein content ko center mein karne ke liye */
+    flex-direction: column; /* Content ko column mein rakhen */
+    align-items: center; /* Horizontally center */
+    justify-content: center; /* Vertically center */
+    text-align: center;
+    position: relative; /* For overlay */
+    padding: 20px; /* Add padding for smaller screens */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2; /* Content overlay ke upar */
+    width: 100%; /* Make container take full width on hero section */
+}
+
+#hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Text shadow */
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+#hero img { /* Styling for the Geology.jpeg image in hero section */
+    max-width: 80%; /* Image ka max width container ke hisaab se */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below image */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.button {
+    display: inline-block; /* Button ko display block banayen taaki padding aur margin apply ho sake */
+    background: #ffd700; /* Button ka background color */
+    color: #004085; /* Button ke text ka color */
+    padding: 12px 25px; /* Padding */
+    text-decoration: none; /* Underline hatayen */
+    border-radius: 5px; /* Border ko gol karein */
+    font-weight: bold;
+    transition: background 0.3s ease; /* Hover effect ke liye transition */
+}
+
+.button:hover {
+    background: #ffc107; /* Hover par background color change karein */
+}
+
+/* Section Common Styles */
+.section-padding {
+    padding: 60px 0; /* Har section ko top aur bottom padding */
+}
+
+.section-padding h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #0056b3;
+    position: relative;
+}
+
+.section-padding h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ffd700;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.bg-light {
+    background: #f4f4f4; /* Light grey background */
+}
+
+/* Program Grid */
+.program-grid {
+    display: grid; /* Grid layout use karein */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+    gap: 30px; /* Grid items ke beech mein gap */
+    margin-top: 30px;
+}
+
+.program-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Halka shadow */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.program-item:hover {
+    transform: translateY(-10px); /* Hover par thoda upar uthe */
+}
+
+.program-item h3 {
+    color: #0056b3;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+/* Faculty Grid */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.faculty-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.faculty-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Image ko gol karein */
+    object-fit: cover; /* Image ko box mein fit karein */
+    margin-bottom: 15px;
+    border: 3px solid #0056b3; /* Image ke around border */
+}
+
+.faculty-member h3 {
+    color: #0056b3;
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+}
+
+.faculty-member p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Research Section */
+#research ul {
+    list-style: disc; /* Bullet points ko circle karein */
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+#research ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+#contact strong {
+    color: #0056b3;
+}
+
+/* Footer Section */
+footer {
+    background: #333; /* Footer ka background */
+    color: #fff; /* Footer text color */
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+
+/* Responsive Design (Mobile ke liye) */
+@media (max-width: 768px) {
+    /* Header specific responsive adjustments */
+    header {
+        flex-direction: column; /* Small screens par items ko column mein rakhen */
+        text-align: center;
+        padding: 1rem 10px; /* Adjust padding */
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Logos ke niche space */
+    }
+
+    .header-text {
+        order: 1; /* Text ko logos ke upar layein */
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    .left-logo {
+        order: 2; /* Left logo ko niche layein */
+    }
+
+    .right-logo {
+        order: 3; /* Right logo ko sabse niche layein */
+    }
+
+
+    .container {
+        width: 90%; /* Chote screens par container ki width badhayen */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Header h1 size for smaller screens */
+    }
+
+    header p {
+        font-size: 1rem; /* Header p size for smaller screens */
+    }
+
+    nav ul li {
+        display: block; /* Navigation links ko ek ke niche ek dikhayen */
+        padding: 10px 0;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    .section-padding h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .program-grid, .faculty-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; /* Even smaller for very small screens */
+    }
+
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .section-padding h2 {
+        font-size: 1.8rem;
+    }
+}
